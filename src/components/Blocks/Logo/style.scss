@@ -1,0 +1,12 @@
+@import "../../../assets/sass/main.scss";
+
+.logo {
+  font-size: 2rem;
+  color: $font_color;
+  font-family: $logo_font;
+  letter-spacing: 2px;
+  cursor: pointer;
+  span {
+    color: $logo_btn_color;
+  }
+}

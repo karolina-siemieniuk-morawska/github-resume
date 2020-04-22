@@ -1,0 +1,13 @@
+@import "../../assets/sass/main.scss";
+
+.resume {
+  width: 80%;
+  max-width: 1300px;
+  height: 1500px;
+  background: white;
+  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto;
+}

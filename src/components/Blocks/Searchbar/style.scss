@@ -1,0 +1,21 @@
+@import "../../../assets/sass/main.scss";
+
+.topbar p {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 350px;
+  background: beige;
+  z-index: 2;
+  border: 1px solid black;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  padding: 20px;
+  span {
+    font-size: 20px;
+    padding-right: 10px;
+  }
+}
