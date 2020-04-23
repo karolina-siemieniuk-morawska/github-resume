@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../Blocks/Logo/index";
 import { Searchbar } from "../Blocks/Searchbar/index";
 import { Button } from "react-bootstrap";
@@ -6,7 +6,13 @@ import InfoModal from "../InfoModal/index";
 import "./style.scss";
 
 export const TopBar = ({ handleInput }) => {
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState(true);
+
+  useEffect(() => {
+    if (localStorage.getItem("isRecurring") === "true") {
+      setModalShow(false);
+    }
+  }, [modalShow])
 
   return (
     <div className="topbar">
