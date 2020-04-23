@@ -23,13 +23,13 @@ export const TopBar = ({ handleInput }) => {
     <div className="topbar">
       <Logo />
       <div className="topbar-left">
-        <Searchbar handleInput={handleInput} />
         <Button variant="primary" onClick={() => setModalShow(true)}>
           Info</Button>
         <InfoModal show={modalShow} onHide={() => {
           setModalShow(false);
           pageIsVisited();
         }} />
+        <Searchbar handleInput={handleInput} />
       </div>
     </div>
   );
