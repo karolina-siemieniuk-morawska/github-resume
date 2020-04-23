@@ -9,10 +9,29 @@
   justify-content: space-between;
   box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.75);
   padding: 10px 50px;
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    .btn {
+      background-color: $logo_btn_color;
+      font-family: $main_font;
+      border: none;
+      height: 40px;
+      border-radius: 10px;
+      padding: 5px 20px;
+      }
+    .btn:active {
+      background-color: orange;
+    }
+    }
 }
 
 @media (max-width: 750px) {
   .topbar {
     flex-direction: column;
+    .topbar-left {
+      flex-direction: column;
+    }
   }
 }

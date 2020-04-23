@@ -1,0 +1,66 @@
+@import "../../assets/sass/main.scss";
+
+.modal-content {
+  width: 50vw;
+  margin: 0 auto;
+  .modal-header {
+    .modal-title {
+      margin-top: 50px !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+    }
+    button {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+  .modal-body {
+    margin: 50px 0;
+    padding: 25px;
+    text-align: center;
+    h4 {
+      padding-bottom: 30px;
+    }
+    p {
+      text-align: justify;
+      margin: 0 auto;
+      width: 70%;
+      line-height: 30px;
+    }
+  }
+  .modal-footer {
+    button {
+      background: $logo_btn_color;
+    }
+    .btn:active {
+      background-color: orange;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .modal-content {
+    width: initial;
+    height: 90vh;
+    max-height: 650px;
+    .modal-header {
+      .modal-title {
+        margin-top: initial !important;
+        h1 {
+          margin-bottom: 0 !important;
+          padding-bottom: 0 !important;
+        }
+      }
+    }
+    .modal-body {
+      margin: 0 auto !important;
+      p {
+        font-size: 2.5vh;
+        line-height: 4vh;
+        width: 85%;
+      }
+    }
+  }
+}
