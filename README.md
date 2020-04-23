@@ -15,11 +15,11 @@ This react application allows you to search GitHub users by their usernames and 
 - Bio
 ...and more ;)
 
-Second part of the resume is users 6 most recently updated repositories, 4 most recent contributions, and short info about them.
+Second part of the resume is user's 6 most recently updated repositories, 4 most recent contributions, and short info about them.
 
 ## Important informations
 
-Work on this application is still in progress. Moblie version is not ready yet (but I am working on it!) so it is best to display the app on desktop.
+Work on this application is still in progress. Design is raw and only temporary. After I finish all functionalities, I will take care of better UI :)
 
 ## Preview
 
