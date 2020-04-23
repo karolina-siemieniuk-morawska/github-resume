@@ -1,21 +1,55 @@
 @import "../../../assets/sass/main.scss";
 
-.topbar p {
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  width: 350px;
-  background: beige;
-  z-index: 2;
-  border: 1px solid black;
-  font-size: 13px;
+.searchbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: red;
   padding: 20px;
-  span {
-    font-size: 20px;
-    padding-right: 10px;
+  input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    width: 250px;
+  }
+  .search-button {
+    background: none;
+    border: none;
+    color: $logo_btn_color;
+    padding-left: 10px;
+    font-size: 18px;
+    position: absolute;
+    right: 80px;
+    cursor: pointer;
+  }
+  p {
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    max-width: 350px;
+    width: 350px;
+    background: beige;
+    z-index: 2;
+    border: 1px solid black;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    padding: 20px;
+    span {
+      font-size: 20px;
+      padding-right: 10px;
+    }
   }
 }
+
+@media (max-width: 750px) {
+  .searchbar {
+    position: relative;
+    .search-button {
+      right: 30px;
+    }
+    p {
+      max-width: 250px !important;
+     }
+    }
+  }

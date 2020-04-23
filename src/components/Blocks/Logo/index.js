@@ -5,7 +5,9 @@ export default function Logo() {
   return (
     <>
       <h1 className="logo">
-        My <span>GitHub</span> Resume
+        <a href="/">
+          My <span>GitHub</span> Resume
+        </a>
       </h1>
     </>
   );

@@ -10,3 +10,9 @@
   box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.75);
   padding: 10px 50px;
 }
+
+@media (max-width: 750px) {
+  .topbar {
+    flex-direction: column;
+  }
+}
