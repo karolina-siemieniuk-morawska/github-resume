@@ -8,11 +8,16 @@ import "./style.scss";
 export const TopBar = ({ handleInput }) => {
   const [modalShow, setModalShow] = useState(true);
 
+  // store info about recurring user in local storage
+  const pageIsVisited = () => {
+    localStorage.setItem("isRecurring", true);
+  }
+
   useEffect(() => {
     if (localStorage.getItem("isRecurring") === "true") {
       setModalShow(false);
     }
-  }, [modalShow])
+  }, [])
 
   return (
     <div className="topbar">
@@ -21,7 +26,10 @@ export const TopBar = ({ handleInput }) => {
         <Searchbar handleInput={handleInput} />
         <Button variant="primary" onClick={() => setModalShow(true)}>
           Info</Button>
-        <InfoModal show={modalShow} onHide={() => setModalShow(false)} />
+        <InfoModal show={modalShow} onHide={() => {
+          setModalShow(false);
+          pageIsVisited();
+        }} />
       </div>
     </div>
   );

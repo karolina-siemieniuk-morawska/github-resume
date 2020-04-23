@@ -1,15 +1,25 @@
 @import "../../assets/sass/main.scss";
 
+.modal-open {
+  padding-right: 0 !important;
+}
 .modal-content {
   width: 50vw;
   margin: 0 auto;
   .modal-header {
+    border: none;
     .modal-title {
       margin-top: 50px !important;
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 0 auto;
+      font-style: italic;
+      color: $logo_btn_color;
+      .logo{
+      font-style: initial;
+      } 
+      
     }
     button {
       margin-left: 0;
@@ -17,8 +27,8 @@
     }
   }
   .modal-body {
-    margin: 50px 0;
     padding: 25px;
+    padding-top: 0;
     text-align: center;
     h4 {
       padding-bottom: 30px;
@@ -31,6 +41,7 @@
     }
   }
   .modal-footer {
+    border: none;
     button {
       background: $logo_btn_color;
     }

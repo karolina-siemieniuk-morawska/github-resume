@@ -5,13 +5,6 @@ import Footer from "./components/Footer/index";
 
 function App() {
 
-  // store info about recurring user in local storage
-  const pageIsVisited = () => {
-    localStorage.setItem("isRecurring", true);
-  }
-
-  pageIsVisited();
-
   const [user, setUser] = useState(null);
 
   const handleInput = (value) => {
