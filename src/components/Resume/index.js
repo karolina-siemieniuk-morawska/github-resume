@@ -11,9 +11,9 @@ export default function Resume({ user }) {
   const search = <FontAwesomeIcon icon={faSearch} />;
 
   if (!user) {
-    return <div className="resume">{search} Enter username</div>;
+    return <div className="resume">{search} <span>Enter username</span></div>;
   } else if (user.message === "Not Found") {
-    return <div className="resume">{ex} User not found</div>;
+    return <div className="resume">{ex} <span>User not found</span></div>;
   } else {
     return <div className="resume"><ResumeContent user={user} /></div>;
   }
