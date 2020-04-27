@@ -4,10 +4,10 @@ import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { turnIntoX } from "../../TopBar/index";
 import "./style.scss";
 
 export const Searchbar = ({ handleInput }) => {
-
   // FontAwesome icon components
   const ex = <FontAwesomeIcon icon={faTimes} />;
   const search = <FontAwesomeIcon icon={faSearch} />;
@@ -22,6 +22,7 @@ export const Searchbar = ({ handleInput }) => {
       .then((fetchedUser) => {
         console.log(fetchedUser);
         handleInput(fetchedUser);
+        turnIntoX();
       });
   };
 
@@ -48,8 +49,8 @@ export const Searchbar = ({ handleInput }) => {
       )}
       {errors.username && errors.username.type === "validate" && (
         <p>
-          <span>{ex}</span> Username can contain only alphanumeric symbols
-          with hyphens and underscores
+          <span>{ex}</span> Username can contain only alphanumeric symbols with
+          hyphens and underscores
         </p>
       )}
       <Button className="search-button" content={search} />

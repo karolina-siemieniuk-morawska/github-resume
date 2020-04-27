@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin: 50px auto;
   padding: 50px;
   .resume-content {
     width: 100%;
@@ -29,13 +29,15 @@
 
 @media (max-width: 750px) {
   .resume {
-    margin: 50px auto !important;
-    .fa-search:last-of-type {
-      font-size: 100px !important;
+    // margin: 100px auto 50px auto !important;
+    .fa-arrow-up,
+    .fa-times {
+      font-size: 60px !important;
       margin: 0 !important;
     }
-  }
-  span {
-    font-size: 30px !important;
+    span {
+      font-size: 28px !important;
+      padding: 15px !important;
+    }
   }
 }

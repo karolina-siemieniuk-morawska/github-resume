@@ -69,7 +69,7 @@ const Bio = ({ user }) => {
               className="repo_bar bar"
               style={barWidth(user.public_repos)}
             ></div>
-            <span>{user.public_repos}</span>
+            <span className="bar-span">{user.public_repos}</span>
           </div>
         </section>
 
@@ -80,7 +80,7 @@ const Bio = ({ user }) => {
               className="gists_bar bar"
               style={barWidth(user.public_gists)}
             ></div>
-            <span>{user.public_gists}</span>
+            <span className="bar-span">{user.public_gists}</span>
           </div>
         </section>
 
@@ -91,7 +91,7 @@ const Bio = ({ user }) => {
               className="fans_bar bar"
               style={barWidth(user.followers)}
             ></div>
-            <span>{user.followers}</span>
+            <span className="bar-span">{user.followers}</span>
           </div>
         </section>
 
@@ -102,7 +102,7 @@ const Bio = ({ user }) => {
               className="idols_bar bar"
               style={barWidth(user.following)}
             ></div>
-            <span>{user.following}</span>
+            <span className="bar-span">{user.following}</span>
           </div>
         </section>
       </div>

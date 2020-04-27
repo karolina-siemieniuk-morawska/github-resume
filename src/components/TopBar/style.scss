@@ -32,15 +32,19 @@
     flex-direction: column;
     min-height: 50px !important;
     padding: 10px !important;
+    position: fixed;
+    top: 0;
+    z-index: 10;
     .topbar-left {
       flex-direction: column;
       display: none;
+      margin-top: 15px;
     }
     .hamburger {
       position: fixed;
-      top: 1px;
+      top: 10px;
       left: 8px;
-      z-index: 10000;
+      z-index: 10;
       .bar-1,
       .bar-2,
       .bar-3 {
@@ -49,20 +53,19 @@
         background-color: #333;
         margin: 6px 0;
         transition: 0.4s;
-        z-index: 10000;
         display: block;
       }
 
-      .change .bar-1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
+      .change.bar-1 {
+        -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+        transform: rotate(-45deg) translate(-5px, 5px);
       }
 
-      .change .bar-2 {
+      .change.bar-2 {
         opacity: 0;
       }
 
-      .change .bar-3 {
+      .change.bar-3 {
         -webkit-transform: rotate(45deg) translate(-8px, -8px);
         transform: rotate(45deg) translate(-8px, -8px);
       }

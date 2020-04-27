@@ -4,7 +4,6 @@ import Resume from "./components/Resume/index";
 import Footer from "./components/Footer/index";
 
 function App() {
-
   const [user, setUser] = useState(null);
 
   const handleInput = (value) => {
@@ -13,6 +12,7 @@ function App() {
 
   return (
     <>
+      <div className="fake-topbar">.</div>
       <TopBar handleInput={handleInput} />
       <Resume user={user} />
       <Footer />

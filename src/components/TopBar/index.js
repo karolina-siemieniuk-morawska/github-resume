@@ -7,6 +7,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
 import "./style.scss";
 
+// Turn hamburger button into exit button
+export const turnIntoX = () => {
+  const bars = document.querySelectorAll(".ham-bar");
+  bars.forEach((bar) => bar.classList.toggle("change"));
+  const menu = document.querySelector(".topbar-left");
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
+};
+
 export const TopBar = ({ handleInput }) => {
   const info = <FontAwesomeIcon icon={faInfo} />;
 
@@ -15,19 +27,6 @@ export const TopBar = ({ handleInput }) => {
   // store info about recurring user in local storage
   const pageIsVisited = () => {
     localStorage.setItem("isRecurring", true);
-  };
-
-  // Turn hamburger button into exit button
-  const turnIntoX = (e) => {
-    const spany = document.querySelectorAll(".ham-bar");
-    console.log(spany);
-    spany.forEach((span) => span.classList.toggle("change"));
-    const menu = document.querySelector(".topbar-left");
-    if (menu.style.display === "none") {
-      menu.style.display = "flex";
-    } else {
-      menu.style.display = "none";
-    }
   };
 
   useEffect(() => {

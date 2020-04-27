@@ -81,8 +81,9 @@
 @media (max-width: 1400px) {
   .number-data {
     position: initial !important;
-    span {
+    .bar-span {
       font-size: 10px !important;
+      padding: 0 !important;
     }
     .bar {
       max-width: 100px !important;
