@@ -10,7 +10,8 @@ canvas {
   max-width: 100%;
 }
 
-a, a:hover {
+a,
+a:hover {
   text-decoration: none;
   color: $font_color;
 }
@@ -23,4 +24,7 @@ body {
 
 #root {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

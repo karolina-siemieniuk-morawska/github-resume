@@ -17,6 +17,19 @@ export const TopBar = ({ handleInput }) => {
     localStorage.setItem("isRecurring", true);
   };
 
+  // Turn hamburger button into exit button
+  const turnIntoX = (e) => {
+    const spany = document.querySelectorAll(".ham-bar");
+    console.log(spany);
+    spany.forEach((span) => span.classList.toggle("change"));
+    const menu = document.querySelector(".topbar-left");
+    if (menu.style.display === "none") {
+      menu.style.display = "flex";
+    } else {
+      menu.style.display = "none";
+    }
+  };
+
   useEffect(() => {
     if (localStorage.getItem("isRecurring") === "true") {
       setModalShow(false);
@@ -26,6 +39,11 @@ export const TopBar = ({ handleInput }) => {
   return (
     <div className="topbar">
       <Logo />
+      <div className="hamburger" onClick={turnIntoX}>
+        <span className="bar-1 ham-bar"></span>
+        <span className="bar-2 ham-bar"></span>
+        <span className="bar-3 ham-bar"></span>
+      </div>
       <div className="topbar-left">
         <Button variant="primary" onClick={() => setModalShow(true)}>
           {info}

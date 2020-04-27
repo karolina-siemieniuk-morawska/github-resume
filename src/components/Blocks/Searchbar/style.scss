@@ -8,14 +8,14 @@
     padding: 10px;
     border-radius: 10px;
     border: 1px solid grey;
-    width: 250px;
+    width: 280px;
   }
   .search-button {
     background: none;
     border: none;
     color: $logo_btn_color;
     padding-left: 10px;
-    font-size: 18px;
+    font-size: 18px !important;
     position: absolute;
     right: 85px;
     cursor: pointer;
@@ -50,6 +50,6 @@
     }
     p {
       max-width: 250px !important;
-     }
     }
   }
+}

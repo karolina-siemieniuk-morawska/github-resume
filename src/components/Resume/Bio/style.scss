@@ -78,7 +78,19 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1400px) {
+  .number-data {
+    position: initial !important;
+    span {
+      font-size: 10px !important;
+    }
+    .bar {
+      max-width: 100px !important;
+    }
+  }
+}
+
+@media (max-width: 930px) {
   .bio {
     max-height: none !important;
     .intro {
@@ -100,10 +112,15 @@
     font-size: 15px !important;
   }
   .number-data {
-    position: initial !important;
-    width: 100% !important;
+    width: 90% !important;
     .bar {
       max-width: 75px !important;
     }
+  }
+}
+
+@media (max-width: 400px) {
+  .bar {
+    max-width: 50px !important;
   }
 }

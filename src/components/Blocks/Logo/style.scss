@@ -12,3 +12,10 @@
     color: $logo_btn_color;
   }
 }
+
+@media (max-width: 750px) {
+  .logo {
+    padding: 5px !important;
+    font-size: 20px;
+  }
+}

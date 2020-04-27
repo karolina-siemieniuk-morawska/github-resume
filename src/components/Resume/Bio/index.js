@@ -51,7 +51,7 @@ const Bio = ({ user }) => {
 
           {user.company !== null && user.company !== "" && (
             <h3 className="company">
-              <i class="fas fa-building"></i> {user.company}
+              <i className="fas fa-building"></i> {user.company}
             </h3>
           )}
         </div>

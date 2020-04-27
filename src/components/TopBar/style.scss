@@ -30,8 +30,42 @@
 @media (max-width: 750px) {
   .topbar {
     flex-direction: column;
+    min-height: 50px !important;
+    padding: 10px !important;
     .topbar-left {
       flex-direction: column;
+      display: none;
+    }
+    .hamburger {
+      position: fixed;
+      top: 1px;
+      left: 8px;
+      z-index: 10000;
+      .bar-1,
+      .bar-2,
+      .bar-3 {
+        width: 30px;
+        height: 3px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+        z-index: 10000;
+        display: block;
+      }
+
+      .change .bar-1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+      }
+
+      .change .bar-2 {
+        opacity: 0;
+      }
+
+      .change .bar-3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
     }
   }
 }
