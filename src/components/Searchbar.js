@@ -7,21 +7,30 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { handleResponsiveMenu } from "./Hamburger";
 import "../assets/sass/Searchbar.scss";
 
-export default function Searchbar({ handleInput }) {
+export default function Searchbar({ handleRepos, handleUser }) {
   // FontAwesome icon component
   const search = <FontAwesomeIcon icon={faSearch} />;
 
   // useForm hook elements
   const { register, handleSubmit, errors } = useForm();
 
-  // fetching all needed info about GitHub user
+  // fetching info about GitHub user
   const fetchUser = (data) => {
     fetch(`https://api.github.com/users/${data.username}`)
       .then((result) => result.json())
       .then((fetchedUser) => {
         console.log(fetchedUser);
-        handleInput(fetchedUser);
-        handleResponsiveMenu();
+        handleUser(fetchedUser);
+      });
+  };
+
+  // fetching info about GitHub user's repositories
+  const fetchRepos = (data) => {
+    fetch(`https://api.github.com/users/${data.username}/repos`)
+      .then((result) => result.json())
+      .then((fetchedRepos) => {
+        console.log(fetchedRepos);
+        handleRepos(fetchedRepos);
       });
   };
 
@@ -33,8 +42,14 @@ export default function Searchbar({ handleInput }) {
     return false;
   };
 
+  const onSubmit = (data) => {
+    fetchUser(data);
+    fetchRepos(data);
+    handleResponsiveMenu();
+  };
+
   return (
-    <form className="searchbar" onSubmit={handleSubmit(fetchUser)}>
+    <form className="searchbar" onSubmit={handleSubmit(onSubmit)}>
       <input
         type="text"
         placeholder="Enter GitHub username"

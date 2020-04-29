@@ -6,7 +6,7 @@ import Bio from "./Bio";
 import Timeline from "./Timeline";
 import "../../assets/sass/Resume.scss";
 
-export default function Resume({ user }) {
+export default function Resume({ user, repos }) {
   // FontAwesome icon components
   const ex = <FontAwesomeIcon icon={faTimes} />;
   const up = <FontAwesomeIcon icon={faArrowUp} />;
@@ -28,7 +28,7 @@ export default function Resume({ user }) {
       <div className="resume">
         <div className="resume-content">
           <Bio user={user} />
-          <Timeline user={user} />
+          <Timeline user={user} repos={repos} />
         </div>
       </div>
     );

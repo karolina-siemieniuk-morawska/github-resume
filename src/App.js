@@ -26,8 +26,12 @@ function App() {
     }
   }, []);
 
-  const handleInput = (value) => {
-    setUser(value);
+  const handleUser = (user) => {
+    setUser(user);
+  };
+
+  const handleRepos = (repos) => {
+    setRepos(repos);
   };
 
   return (
@@ -47,8 +51,8 @@ function App() {
         }}
       />
       <div className="fake-topbar">.</div>
-      <Topbar handleInput={handleInput} />
-      <Resume user={user} />
+      <Topbar handleUser={handleUser} handleRepos={handleRepos} />
+      <Resume user={user} repos={repos} />
       <Footer />
     </>
   );
