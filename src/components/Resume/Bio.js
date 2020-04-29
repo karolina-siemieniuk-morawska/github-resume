@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.scss";
+import "../../assets/sass/Bio.scss";
 
 const Bio = ({ user }) => {
   const barWidth = (type) => {

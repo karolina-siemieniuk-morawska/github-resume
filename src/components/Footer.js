@@ -1,11 +1,8 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from 'react';
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faFacebook
-} from '@fortawesome/free-brands-svg-icons';
-import "./style.scss";
+import { faGithub, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import "../assets/sass/Footer.scss";
 
 export default function Footer() {
   const github = <FontAwesomeIcon icon={faGithub} />;
@@ -16,7 +13,10 @@ export default function Footer() {
       <div className="am-here"></div>
       <h5>2020 &copy; Karolina Siemieniuk-Morawska</h5>
       <div className="sm-logos">
-        <a target="_blank" href="https://github.com/karolina-siemieniuk-morawska">
+        <a
+          target="_blank"
+          href="https://github.com/karolina-siemieniuk-morawska"
+        >
           {github}
         </a>
         <a target="_blank" href="https://www.facebook.com/karolina.justynska">
@@ -24,5 +24,5 @@ export default function Footer() {
         </a>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-@import "../../assets/sass/main.scss";
+@import "./general.scss";
 
 .modal-open {
   padding-right: 0 !important;
@@ -16,10 +16,9 @@
       margin: 0 auto;
       font-style: italic;
       color: $logo_btn_color;
-      .logo{
-      font-style: initial;
-      } 
-      
+      .logo {
+        font-style: initial;
+      }
     }
     button {
       margin-left: 0;

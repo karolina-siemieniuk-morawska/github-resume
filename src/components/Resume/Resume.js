@@ -1,9 +1,10 @@
 import React from "react";
-import ResumeContent from "./ResumeContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import "./style.scss";
+import Bio from "./Bio";
+import Timeline from "./Timeline";
+import "../../assets/sass/Resume.scss";
 
 export default function Resume({ user }) {
   // FontAwesome icon components
@@ -25,7 +26,10 @@ export default function Resume({ user }) {
   } else {
     return (
       <div className="resume">
-        <ResumeContent user={user} />
+        <div className="resume-content">
+          <Bio user={user} />
+          <Timeline user={user} />
+        </div>
       </div>
     );
   }

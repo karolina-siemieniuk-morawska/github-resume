@@ -1,8 +1,8 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Button } from "react-bootstrap";
-import Logo from "../Blocks/Logo/index";
-import "./style.scss";
+import Logo from "./Logo";
+import "../assets/sass/Modal.scss";
 
 export default function InfoModal(propsy) {
   const logo = <Logo />;
@@ -23,13 +23,16 @@ export default function InfoModal(propsy) {
         <Modal.Body>
           <h4>About Application</h4>
           <p>
-            GitHub Resume App allows you to display most relevant info from GitHub user's profile in more legible form. Simply type the username in searchbar on top of the page and click on magnifying glass or press enter.
-        </p>
+            GitHub Resume App allows you to display most relevant info from
+            GitHub user's profile in more legible form. Simply type the username
+            in searchbar on top of the page and click on magnifying glass or
+            press enter.
+          </p>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={propsy.onHide}>Got it!</Button>
         </Modal.Footer>
       </Modal>
     </>
-  )
+  );
 }

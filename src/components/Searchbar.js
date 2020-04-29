@@ -1,13 +1,13 @@
 import React from "react";
-import { Button } from "../Button/index";
+import Button from "./Button";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { turnIntoX } from "../../TopBar/index";
-import "./style.scss";
+import { turnIntoX } from "./Topbar";
+import "../assets/sass/Searchbar.scss";
 
-export const Searchbar = ({ handleInput }) => {
+export default function Searchbar({ handleInput }) {
   // FontAwesome icon components
   const ex = <FontAwesomeIcon icon={faTimes} />;
   const search = <FontAwesomeIcon icon={faSearch} />;
@@ -56,4 +56,4 @@ export const Searchbar = ({ handleInput }) => {
       <Button className="search-button" content={search} />
     </form>
   );
-};
+}

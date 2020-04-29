@@ -1,4 +1,4 @@
-@import "../../assets/sass/main.scss";
+@import "./general.scss";
 
 .resume {
   width: 80%;
@@ -29,7 +29,6 @@
 
 @media (max-width: 750px) {
   .resume {
-    // margin: 100px auto 50px auto !important;
     .fa-arrow-up,
     .fa-times {
       font-size: 60px !important;

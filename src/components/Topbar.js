@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../Blocks/Logo/index";
-import { Searchbar } from "../Blocks/Searchbar/index";
+import Logo from "./Logo";
+import Searchbar from "./Searchbar";
+import InfoModal from "./Modal";
 import { Button } from "react-bootstrap";
-import InfoModal from "../InfoModal/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
-import "./style.scss";
+import "../assets/sass/Topbar.scss";
 
 // Turn hamburger button into exit button
 export const turnIntoX = () => {
@@ -19,7 +19,7 @@ export const turnIntoX = () => {
   }
 };
 
-export const TopBar = ({ handleInput }) => {
+export default function Topbar({ handleInput }) {
   const info = <FontAwesomeIcon icon={faInfo} />;
 
   const [modalShow, setModalShow] = useState(true);
@@ -58,4 +58,4 @@ export const TopBar = ({ handleInput }) => {
       </div>
     </div>
   );
-};
+}

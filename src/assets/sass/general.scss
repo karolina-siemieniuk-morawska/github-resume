@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Righteous&display=swap");
+@import "variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +38,7 @@ body {
   padding: 20px;
   display: none;
 }
+
 @media (max-width: 750px) {
   .fake-topbar {
     display: block;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { TopBar } from "./components/TopBar/index";
-import Resume from "./components/Resume/index";
-import Footer from "./components/Footer/index";
+import Topbar from "./components/Topbar";
+import Resume from "./components/Resume/Resume";
+import Footer from "./components/Footer";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <div className="fake-topbar">.</div>
-      <TopBar handleInput={handleInput} />
+      <Topbar handleInput={handleInput} />
       <Resume user={user} />
       <Footer />
     </>
