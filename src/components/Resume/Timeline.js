@@ -1,7 +1,7 @@
 import React from "react";
 import "../../assets/sass/Timeline.scss";
 
-const Timeline = (user) => {
+const Timeline = ({ user }) => {
   return <div className="timeline"></div>;
 };
 

@@ -4,13 +4,13 @@ import { Modal, Button } from "react-bootstrap";
 import Logo from "./Logo";
 import "../assets/sass/Modal.scss";
 
-export default function InfoModal(propsy) {
+export default function InfoModal(props) {
   const logo = <Logo />;
 
   return (
     <>
       <Modal
-        {...propsy}
+        {...props}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -30,7 +30,7 @@ export default function InfoModal(propsy) {
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={propsy.onHide}>Got it!</Button>
+          <Button onClick={props.onHide}>Got it!</Button>
         </Modal.Footer>
       </Modal>
     </>

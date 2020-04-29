@@ -1,15 +1,14 @@
 import React from "react";
 import Button from "./Button";
+import ValidationError from "./ValidationError";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { turnIntoX } from "./Topbar";
+import { handleResponsiveMenu } from "./Hamburger";
 import "../assets/sass/Searchbar.scss";
 
 export default function Searchbar({ handleInput }) {
-  // FontAwesome icon components
-  const ex = <FontAwesomeIcon icon={faTimes} />;
+  // FontAwesome icon component
   const search = <FontAwesomeIcon icon={faSearch} />;
 
   // useForm hook elements
@@ -22,7 +21,7 @@ export default function Searchbar({ handleInput }) {
       .then((fetchedUser) => {
         console.log(fetchedUser);
         handleInput(fetchedUser);
-        turnIntoX();
+        handleResponsiveMenu();
       });
   };
 
@@ -43,15 +42,13 @@ export default function Searchbar({ handleInput }) {
         ref={register({ required: true, validate: validateUsername })}
       ></input>
       {errors.username && errors.username.type === "required" && (
-        <p>
-          <span>{ex}</span> Username is required
-        </p>
+        <ValidationError content=" Username is required" />
       )}
       {errors.username && errors.username.type === "validate" && (
-        <p>
-          <span>{ex}</span> Username can contain only alphanumeric symbols with
-          hyphens and underscores
-        </p>
+        <ValidationError
+          content="Username can contain only alphanumeric symbols with
+        hyphens and underscores"
+        />
       )}
       <Button className="search-button" content={search} />
     </form>

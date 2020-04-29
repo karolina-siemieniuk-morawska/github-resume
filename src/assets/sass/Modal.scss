@@ -1,5 +1,24 @@
 @import "./general.scss";
 
+.info-button {
+  position: absolute;
+  top: 32px;
+  right: 30px;
+  width: 50px;
+  font-family: $main_font;
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+.info-button:active,
+.btn-primary:focus,
+.info-button:hover,
+.btn-primary {
+  background-color: $logo_btn_color;
+  box-shadow: 0 0 0 0.2rem $logo_btn_color;
+}
+
 .modal-open {
   padding-right: 0 !important;
 }
@@ -51,11 +70,32 @@
 }
 
 @media (max-width: 750px) {
+  .info-button {
+    z-index: 3000;
+    background: none;
+    color: $logo_btn_color;
+    width: 25px !important;
+    padding: 0 !important;
+    font-size: 18px;
+    top: 7px;
+    right: 10px;
+  }
+  .info-button:active,
+  .info-button:focus,
+  .info-button:hover,
+  .info-button {
+    box-shadow: none !important;
+    background: none;
+    color: $logo_btn_color;
+  }
+
   .modal-content {
     width: initial;
     height: 90vh;
     max-height: 650px;
+    z-index: 4000;
     .modal-header {
+      margin: 30px 0 !important;
       .modal-title {
         margin-top: initial !important;
         h1 {

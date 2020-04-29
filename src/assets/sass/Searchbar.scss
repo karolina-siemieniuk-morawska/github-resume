@@ -4,6 +4,8 @@
   display: flex;
   align-items: center;
   padding: 20px;
+  margin-right: 75px;
+  position: relative;
   input {
     padding: 10px;
     border-radius: 10px;
@@ -17,39 +19,16 @@
     padding-left: 10px;
     font-size: 18px !important;
     position: absolute;
-    right: 85px;
+    right: 30px;
     cursor: pointer;
-  }
-  p {
-    position: absolute;
-    top: 75px;
-    right: 20px;
-    max-width: 350px;
-    width: 350px;
-    background: beige;
-    z-index: 2;
-    border: 1px solid black;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: red;
-    padding: 20px;
-    span {
-      font-size: 20px;
-      padding-right: 10px;
-    }
   }
 }
 
 @media (max-width: 750px) {
   .searchbar {
-    position: relative;
+    margin-right: initial !important;
     .search-button {
       right: 30px;
-    }
-    p {
-      max-width: 250px !important;
     }
   }
 }

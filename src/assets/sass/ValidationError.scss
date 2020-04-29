@@ -1,0 +1,28 @@
+@import "./general.scss";
+
+.validation-error {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  max-width: 350px;
+  width: 350px;
+  background: beige;
+  z-index: 2;
+  border: 1px solid black;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  padding: 20px;
+  span {
+    font-size: 20px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 750px) {
+  .validation-error {
+    max-width: 250px !important;
+  }
+}
