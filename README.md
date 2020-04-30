@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # THE GREAT REFACTOR - in progress
 
-One month after completing the project, I looked back to my code and realized it's complete shit. So the app is currently in development stage (again). Still I encourage everyone interested to track it's progress. 
+One month after completing the project, I looked back to my code and realized it's complete shit. So the app is currently in development stage (again). Still I encourage everyone interested to track it's progress.
 
 # Github Resume
 
@@ -13,7 +13,7 @@ This react application allows you to search GitHub users by their usernames and 
 - Is user looking for job
 - Number of repositories and followers
 - Bio
-...and more ;)
+  ...and more ;)
 
 Second part of the resume is user's 6 most recently updated repositories, 4 most recent contributions, and short info about them.
 
@@ -61,3 +61,10 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## To be done
+
+1. Do oddzielnego pliku fetche. Fetche powinny zwracac dane
+2. W SearchBar zrobic request ktory sprawdzi czy uzytkownik istnieje
+3. Do state/sessionStorage tylko username
+4. Tam gdzie potrzebujesz danych zrobic request
