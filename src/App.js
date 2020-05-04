@@ -16,8 +16,7 @@ function App() {
   const info = <FontAwesomeIcon icon={faInfo} />;
 
   const [modalShow, setModalShow] = useState(true);
-  const [user, setUser] = useState(null);
-  const [repos, setRepos] = useState(null);
+  const [username, setUsername] = useState(null);
 
   // hide modal for recurring user
   useEffect(() => {
@@ -26,12 +25,8 @@ function App() {
     }
   }, []);
 
-  const handleUser = (user) => {
-    setUser(user);
-  };
-
-  const handleRepos = (repos) => {
-    setRepos(repos);
+  const handleUser = (username) => {
+    setUsername(username);
   };
 
   return (
@@ -51,8 +46,8 @@ function App() {
         }}
       />
       <div className="fake-topbar">.</div>
-      <Topbar handleUser={handleUser} handleRepos={handleRepos} />
-      <Resume user={user} repos={repos} />
+      <Topbar handleUser={handleUser} />
+      <Resume username={username} />
       <Footer />
     </>
   );

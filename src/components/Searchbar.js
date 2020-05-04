@@ -7,32 +7,12 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { handleResponsiveMenu } from "./Hamburger";
 import "../assets/sass/Searchbar.scss";
 
-export default function Searchbar({ handleRepos, handleUser }) {
+export default function Searchbar({ handleUser }) {
   // FontAwesome icon component
   const search = <FontAwesomeIcon icon={faSearch} />;
 
   // useForm hook elements
   const { register, handleSubmit, errors } = useForm();
-
-  // fetching info about GitHub user
-  const fetchUser = (data) => {
-    fetch(`https://api.github.com/users/${data.username}`)
-      .then((result) => result.json())
-      .then((fetchedUser) => {
-        console.log(fetchedUser);
-        handleUser(fetchedUser);
-      });
-  };
-
-  // fetching info about GitHub user's repositories
-  const fetchRepos = (data) => {
-    fetch(`https://api.github.com/users/${data.username}/repos`)
-      .then((result) => result.json())
-      .then((fetchedRepos) => {
-        console.log(fetchedRepos);
-        handleRepos(fetchedRepos);
-      });
-  };
 
   // validate name to only contain alphanumeric signs, hyphens and underscores
   const validateUsername = (value) => {
@@ -43,8 +23,7 @@ export default function Searchbar({ handleRepos, handleUser }) {
   };
 
   const onSubmit = (data) => {
-    fetchUser(data);
-    fetchRepos(data);
+    handleUser(data.username);
     handleResponsiveMenu();
   };
 
