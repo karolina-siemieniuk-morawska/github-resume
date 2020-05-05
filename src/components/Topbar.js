@@ -4,12 +4,12 @@ import Searchbar from "./Searchbar";
 import Hamburger from "./Hamburger";
 import "../assets/sass/Topbar.scss";
 
-export default function Topbar({ handleUser }) {
+export default function Topbar({ handleUsername }) {
   return (
     <div className="topbar">
       <Logo />
       <Hamburger />
-      <Searchbar handleUser={handleUser} />
+      <Searchbar handleUsername={handleUsername} />
     </div>
   );
 }

@@ -4,10 +4,11 @@ import ValidationError from "./ValidationError";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { handleResponsiveMenu } from "./Hamburger";
+import { handleResponsiveMenu } from "../utils/handleResponsiveMenu";
+import { setUsername } from "../utils/setUsername";
 import "../assets/sass/Searchbar.scss";
 
-export default function Searchbar({ handleUser }) {
+export default function Searchbar({ handleUsername }) {
   // FontAwesome icon component
   const search = <FontAwesomeIcon icon={faSearch} />;
 
@@ -23,8 +24,9 @@ export default function Searchbar({ handleUser }) {
   };
 
   const onSubmit = (data) => {
-    handleUser(data.username);
+    setUsername(data.username);
     handleResponsiveMenu();
+    handleUsername(data.username);
   };
 
   return (

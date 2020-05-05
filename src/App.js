@@ -3,20 +3,21 @@ import InfoModal from "./components/Modal";
 import Topbar from "./components/Topbar";
 import Resume from "./components/Resume/Resume";
 import Footer from "./components/Footer";
+import { pageIsVisited } from "./utils/pageIsVisited";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
-
-// store info about recurring user in local storage
-export const pageIsVisited = () => {
-  localStorage.setItem("isRecurring", true);
-};
 
 function App() {
   const info = <FontAwesomeIcon icon={faInfo} />;
 
   const [modalShow, setModalShow] = useState(true);
-  const [username, setUsername] = useState(null);
+  const [username, setUsername] = useState("");
+
+  const handleUsername = (data) => {
+    setUsername(data);
+    console.log(username + "state zaktualizowany");
+  };
 
   // hide modal for recurring user
   useEffect(() => {
@@ -24,10 +25,6 @@ function App() {
       setModalShow(false);
     }
   }, []);
-
-  const handleUser = (username) => {
-    setUsername(username);
-  };
 
   return (
     <>
@@ -46,8 +43,8 @@ function App() {
         }}
       />
       <div className="fake-topbar">.</div>
-      <Topbar handleUser={handleUser} />
-      <Resume username={username} />
+      <Topbar handleUsername={handleUsername} />
+      <Resume />
       <Footer />
     </>
   );
