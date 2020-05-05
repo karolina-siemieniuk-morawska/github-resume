@@ -16,7 +16,7 @@ function App() {
 
   const handleUsername = (data) => {
     setUsername(data);
-    console.log(username + "state zaktualizowany");
+    console.log(username + " state zaktualizowany");
   };
 
   // hide modal for recurring user
