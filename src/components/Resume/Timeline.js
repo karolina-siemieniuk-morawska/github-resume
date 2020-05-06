@@ -1,42 +1,24 @@
 import React from "react";
+import { createSortedReposArray } from "../../utils/createSortedReposArray";
 import Repo from "./TimelineContent/Repo";
 import "../../assets/sass/Timeline.scss";
 
-const Timeline = ({ user }) => {
-  const creationDate = new Date(user.created_at).toLocaleDateString();
+const Timeline = ({ data }) => {
+  const creationDate = new Date(data.user.created_at).toLocaleDateString();
 
-  // in order to sort repos by date, convert date to timestamp
-  const convertDateToTimestamp = (date) => {
-    return Date.parse(date);
-  };
-
-  // choosing 6 recently updated repositories
-  const createSortedReposArray = (repos) => {
-    if (repos.message === "Not Found") {
-      return null;
-    } else if (repos.length > 0) {
-      repos.sort((a, b) => {
-        return (
-          convertDateToTimestamp(b.pushed_at) -
-          convertDateToTimestamp(a.pushed_at)
-        );
-      });
-
-      repos.splice(6, repos.length - 1);
-    }
-  };
+  const repos = createSortedReposArray(data.repos);
 
   return (
     <div className="timeline">
-      {/* {user.repos.map((repo) => (
+      {repos.map((repo) => (
         <Repo key={repo.id} {...repo} />
-      ))} */}
+      ))}
+      {data.repos > 6 && (
+        <h3>
+          Find more repos <a href={data.user.html_url}>here</a>
+        </h3>
+      )}
       <h2>{creationDate} - GitHub profile was created</h2>
-      {/* {localStorage.getItem("numberOfRepos") > 6 && (
-        <small>
-          Find more repos <a href={user.html_url}>here</a>
-        </small>
-      )} */}
     </div>
   );
 };

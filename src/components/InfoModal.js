@@ -1,15 +1,15 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import Logo from "./Logo";
 import "../assets/sass/Modal.scss";
 
-export default function InfoModal({ show, handleClose }) {
+export default function InfoModal() {
+  console.log('InfoModal');
+  
   return (
     <>
       <Modal
-        show = {show}
-        onHide = {handleClose}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -29,7 +29,7 @@ export default function InfoModal({ show, handleClose }) {
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleClose}>Got it!</Button>
+          {/* <Button onClick={props.onHide}>Got it!</Button> */}
         </Modal.Footer>
       </Modal>
     </>
