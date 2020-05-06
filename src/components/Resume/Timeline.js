@@ -1,16 +1,12 @@
 import React from "react";
-import { fetchRepos } from "../../utils/fetchRepos";
-import { getUsername } from "../../utils/getUsername";
 import { createSortedReposArray } from "../../utils/createSortedReposArray";
 import Repo from "./TimelineContent/Repo";
 import "../../assets/sass/Timeline.scss";
 
-const Timeline = ({ user }) => {
-  const creationDate = new Date(user.created_at).toLocaleDateString();
+const Timeline = ({ data }) => {
+  const creationDate = new Date(data.user.created_at).toLocaleDateString();
 
-  const repos = fetchRepos(getUsername());
-
-  createSortedReposArray(repos);
+  const repos = createSortedReposArray(data.repos);
 
   return (
     <div className="timeline">

@@ -25,4 +25,5 @@ const Bio = ({ user }) => {
     </div>
   );
 };
+
 export default Bio;

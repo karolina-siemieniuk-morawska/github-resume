@@ -5,16 +5,10 @@ const convertDateToTimestamp = (date) => {
 
 // choosing 6 recently updated repositories
 export const createSortedReposArray = (repos) => {
-  if (!repos) {
-    return null;
-  } else if (repos.length > 0) {
-    repos.sort((a, b) => {
-      return (
-        convertDateToTimestamp(b.pushed_at) -
-        convertDateToTimestamp(a.pushed_at)
-      );
-    });
-
-    repos.splice(6, repos.length - 1);
-  }
+  return repos.sort((a, b) => {
+    return (
+      convertDateToTimestamp(b.pushed_at) -
+      convertDateToTimestamp(a.pushed_at)
+    );
+  }).splice(6, repos.length - 1);
 };

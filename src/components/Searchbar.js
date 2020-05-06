@@ -5,10 +5,9 @@ import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { handleResponsiveMenu } from "../utils/handleResponsiveMenu";
-import { setUsername } from "../utils/setUsername";
 import "../assets/sass/Searchbar.scss";
 
-export default function Searchbar({ handleUsername }) {
+export default function Searchbar({ setUsername }) {
   // FontAwesome icon component
   const search = <FontAwesomeIcon icon={faSearch} />;
 
@@ -16,17 +15,11 @@ export default function Searchbar({ handleUsername }) {
   const { register, handleSubmit, errors } = useForm();
 
   // validate name to only contain alphanumeric signs, hyphens and underscores
-  const validateUsername = (value) => {
-    if (/^[a-zA-Z0-9_-]+$/.test(value)) {
-      return true;
-    }
-    return false;
-  };
+  const validateUsername = (value) => (/^[a-zA-Z0-9_-]+$/.test(value));
 
   const onSubmit = (data) => {
     setUsername(data.username);
     handleResponsiveMenu();
-    handleUsername(data.username);
   };
 
   return (

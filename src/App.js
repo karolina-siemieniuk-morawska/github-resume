@@ -1,50 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import InfoModal from "./components/Modal";
 import Topbar from "./components/Topbar";
 import Resume from "./components/Resume/Resume";
 import Footer from "./components/Footer";
-import { pageIsVisited } from "./utils/pageIsVisited";
-import { Button } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfo } from "@fortawesome/free-solid-svg-icons";
+
+const setShowModalTrue = () => {
+  sessionStorage.setItem("showModal", true);
+};
+
+const isUserFirstVisit = () => {
+  return sessionStorage.getItem('showModal') !== 'true';
+}
 
 function App() {
-  const info = <FontAwesomeIcon icon={faInfo} />;
+  console.log(isUserFirstVisit());
+  const [ username, setUsername ] = useState("");
+  const [ show, setShow ] = useState(isUserFirstVisit());
 
-  const [modalShow, setModalShow] = useState(true);
-  const [username, setUsername] = useState("");
-
-  const handleUsername = (data) => {
-    setUsername(data);
-    console.log(username + " state zaktualizowany");
+  const handleClose = () => {
+    setShow(false);
+    setShowModalTrue();
   };
 
-  // hide modal for recurring user
-  useEffect(() => {
-    if (localStorage.getItem("isRecurring") === "true") {
-      setModalShow(false);
-    }
-  }, []);
+  const handleShow = () => setShow(true);
 
   return (
     <>
-      <Button
-        className="info-button"
-        variant="primary"
-        onClick={() => setModalShow(true)}
-      >
-        {info}
-      </Button>
-      <InfoModal
-        show={modalShow}
-        onHide={() => {
-          setModalShow(false);
-          pageIsVisited();
-        }}
-      />
-      <div className="fake-topbar">.</div>
-      <Topbar handleUsername={handleUsername} />
-      <Resume />
+      <InfoModal show = {show} handleClose = {handleClose} />
+      <Topbar setUsername = {setUsername} handleShow = {handleShow} />
+      <Resume username = {username} />
       <Footer />
     </>
   );
