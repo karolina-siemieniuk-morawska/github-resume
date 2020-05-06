@@ -13,6 +13,11 @@ const Timeline = ({ data }) => {
       {repos.map((repo) => (
         <Repo key={repo.id} {...repo} />
       ))}
+      {data.repos > 6 && (
+        <h3>
+          Find more repos <a href={data.user.html_url}>here</a>
+        </h3>
+      )}
       <h2>{creationDate} - GitHub profile was created</h2>
     </div>
   );
