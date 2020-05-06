@@ -16,6 +16,7 @@ function App() {
   const info = <FontAwesomeIcon icon={faInfo} />;
 
   const [modalShow, setModalShow] = useState(true);
+  // to delete later
   const [user, setUser] = useState(null);
   const [repos, setRepos] = useState(null);
 
