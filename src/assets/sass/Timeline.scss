@@ -1,1 +1,68 @@
 @import "./general.scss";
+
+.timeline {
+  .timeline-title {
+    text-align: center;
+    color: $logo_btn_color;
+    margin: 50px auto;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 15px;
+    position: relative;
+    width: 30vw;
+    max-width: 450px;
+    background: #ffffff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: #685e5e solid 1px;
+  }
+  margin: 50px auto;
+  position: relative;
+  .creation-bubble {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    color: grey;
+    position: relative;
+    width: 30vw;
+    max-width: 450px;
+    background: #ffffff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: #685e5e solid 1px;
+    margin: auto;
+    margin-top: 50px;
+    p:first-child {
+      font-size: 18px;
+      color: $logo_btn_color;
+      font-weight: bold;
+    }
+    p {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.timeline:before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 100%;
+  background-color: grey;
+  position: absolute;
+  left: 50%;
+  top: 0;
+}
+
+.more-repos {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 50px;
+  a {
+    color: $logo_btn_color;
+  }
+}

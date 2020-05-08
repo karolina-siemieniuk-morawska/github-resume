@@ -23,7 +23,7 @@ export default function Resume({ username }) {
     })();
   }, [username]);
 
-  if (!data.user) {
+  if (username === "") {
     return (
       <div className="resume">
         {up} <span>Enter username</span>

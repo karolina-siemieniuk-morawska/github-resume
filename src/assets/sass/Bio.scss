@@ -90,6 +90,13 @@
   }
 }
 
+@media (max-width: 1250px) {
+  .contact-info {
+    display: initial !important;
+    text-align: center;
+  }
+}
+
 @media (max-width: 930px) {
   .bio {
     max-height: none !important;

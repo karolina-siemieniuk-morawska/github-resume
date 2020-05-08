@@ -1,0 +1,92 @@
+@import "./general.scss";
+
+.repo {
+  padding: 15px;
+  margin: 25px auto;
+  h3 {
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: $logo_btn_color;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    p {
+      color: grey;
+      font-size: 14px;
+    }
+  }
+  .repo_description {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .repo-info {
+    display: flex;
+    justify-content: space-evenly;
+    & > * {
+      background: rgba(246, 190, 52, 0.4);
+      font-size: 12px;
+      padding: 5px 8px;
+    }
+    i {
+      padding-right: 3px;
+    }
+  }
+}
+
+// dialog bubbles style
+.bubble {
+  position: relative;
+  width: 30vw;
+  max-width: 450px;
+  height: 40%;
+  background: #ffffff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: #685e5e solid 1px;
+  &:nth-child(even) {
+    margin-left: 30px !important;
+  }
+  &:nth-child(odd) {
+    margin-right: 30px !important;
+  }
+}
+
+.bubble:nth-child(odd):before,
+.bubble:nth-child(odd):after,
+.bubble:nth-child(even):before,
+.bubble:nth-child(even):after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  display: block;
+  width: 0;
+  z-index: 1;
+  top: 40px;
+}
+
+.bubble:nth-child(odd):before {
+  border-width: 20px 20px 20px 0;
+  border-color: transparent #685e5e;
+  left: -21px;
+}
+
+.bubble:nth-child(odd):after {
+  border-width: 20px 20px 20px 0;
+  border-color: transparent #ffffff;
+  left: -20px;
+}
+
+.bubble:nth-child(even):before {
+  border-width: 20px 0 20px 20px;
+  border-color: transparent #685e5e;
+  right: -21px;
+}
+
+.bubble:nth-child(even):after {
+  border-width: 20px 0 20px 20px;
+  border-color: transparent #ffffff;
+  right: -20px;
+}
